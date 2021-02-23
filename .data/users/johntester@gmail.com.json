@@ -1,0 +1,12 @@
+{
+    "email": "johntester@gmail.com",
+    "name": "John Tester",
+    "address": "2 W 21st St, New York, NY 10010, USA",
+    "hashedPassword": "20b117a4bafeb93da58a4a9054be42e7ce5a02406550cc86ff8e7b12af9d23ab",
+    "shoppingCard": [],
+    "created": 1613950527526,
+    "shoppingCard_currentPaymentIntent": {},
+    "paymentIntentConfirm": [
+        "pi_1INRSXCNn1q1Zb716CBCglSp"
+    ]
+}

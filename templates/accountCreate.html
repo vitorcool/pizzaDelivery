@@ -1,0 +1,36 @@
+<h1>Create Your Account</h1>
+<section>
+    <h2>{head.description}</h2>
+
+    <div class="formWrapper">
+        <form id="accountCreate" action="/api/users" method="POST">
+            <div class="formError"></div>
+            <div class="inputWrapper">
+                <div class="inputLabel">Name</div>
+                <input type="text" name="name" placeholder="John" />
+            </div>
+            <div class="inputWrapper">
+                <div class="inputLabel">Address</div>
+                <input type="text" id="address" name="address" placeholder="street, apartment number, town/city, state an zip code" />  
+                <i class="fa fa-spinner"></i>
+                <!-- Event click -->
+                <i id="geolocationButton" class="fa fa-map-marker"></i>
+            </div>
+            <div class="inputWrapper">
+                <div class="inputLabel">Email</div>
+                <input type="text" name="email" placeholder="email@some.domain" />
+            </div>
+            <div class="inputWrapper">
+                <div class="inputLabel">Choose a Password</div>
+                <input type="password" name="password" placeholder="Make it a good one!" />
+            </div>
+            <!-- <div class="inputWrapper">
+                <div class="inputLabel">Do you agree to the terms and conditions?</div>
+                <input type="checkbox" name="tosAgreement" value="agree">
+            </div> -->
+            <div class="inputWrapper ctaWrapper">
+                <button type="submit" class="cta blue">Get Started</button>
+            </div>
+        </form>
+    </div>
+</section>

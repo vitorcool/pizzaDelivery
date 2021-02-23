@@ -1,0 +1,12 @@
+{
+    "email": "vitorcool@gmail.com",
+    "name": "Vitor Oliveira",
+    "address": "R. da Bela Vista 11, 2560 A dos Cunhados, Portugal",
+    "hashedPassword": "8e549d6975f2e7b1ced2076a25e66cdaa9b078273c2f24cc9a6602447b021773",
+    "shoppingCard": [],
+    "created": "2021-02-22T00:05:03.629Z",
+    "shoppingCard_currentPaymentIntent": {},
+    "paymentIntentConfirm": [
+        "pi_1INRvGCNn1q1Zb71eDFQ5ejk"
+    ]
+}

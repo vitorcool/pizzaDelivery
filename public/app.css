@@ -1,0 +1,777 @@
+/*
+ * CSS Styles for Application
+ *
+ */
+body{
+  font-size: 62.5%;
+  font-family: sans-serif;
+  font-weight: normal;
+  box-sizing:border-box;
+} 
+a,a:hover,a:active,a:visited{
+  color: #1a1a1a;
+  text-decoration: none;
+}
+/* Resets */
+body,p,h1,h2,h3,h4,h5,h6,div,span,header,footer,img,a,a:hover,a:active,a:visited,table,tr,td,th,form,input,button,select,textarea{
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+}
+
+.clear{
+  float: none;
+  width: 100%;
+  height: 1px;
+}
+
+/* Main color palette */
+main>header{
+  background-color: #fff;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 -25px 11px 20px #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  z-index: 9;
+}
+
+main>header ul{
+  /* margin: -14px 13px; */
+  list-style-type: none;
+  text-align: right;
+  padding: 0 50px;
+}
+
+main>header ul li{
+  display: inline-block;
+  padding: 10px 10px 0 10px;
+}
+
+main>header ul li a{
+  text-transform: uppercase;
+  font-weight: 900 !important;
+  font-size: 0.7rem;
+}
+
+body:not(.loggedIn):not(.loggedOut) .pizzaFlowStep1,
+body.loggedIn .pizzaFlowStep1,
+body:not(.loggedIn) .loggedIn,
+body:not(.loggedOut) .loggedOut
+{
+  display: none !important;
+}
+
+body.loggedIn .loggedOut{
+  display: none;
+}
+
+body.loggedOut .loggedOut,
+body.loggedIn loggedIn{
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  display: inline-block;
+}
+
+
+main>header .logo{
+  text-align: left;
+  padding: 0 0 0 50px;
+  float: left;
+}
+
+main>header .logo img{
+    width: 50px;
+}
+
+.content {
+  min-height: calc(100% - 114px);
+  width: auto;
+  min-width: 640px;
+  margin: 61px auto 0px;
+  background-image: url("/public/pizza.svg");
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-size: contain;
+  background-blend-mode: overlay;
+  background-size: 50vh 50vh;
+  background-color: #ffffff91;
+  background-position-x: 10vw;
+  background-position-y: 10vw;
+  background-color: #27ae60;
+  padding:1px;
+}
+
+footer{
+  background-color: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  /* border-width: 1px 0 0 0; */
+  border-color: #fff;
+  border-style: solid;
+}
+
+footer .copyright{
+  color: #fff;
+  font-size: 0.9rem;
+  font-family:monospace;
+}
+
+/* Index */
+h1{
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 0 5px 0;
+}
+
+h2{
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 0 20px 0;
+}
+
+body.index .blurb{
+  text-align: center;
+  padding: 11%;
+  margin: 20px auto 20px auto;
+  max-width: 763px;
+  line-height: 150%;
+  font-size: 1.1rem;
+}
+
+.ctaWrapper{
+  text-align: center;
+}
+
+.cta,a.cta:hover,a.cta:active,a.cta:visited,button.cta:hover,button.cta:active,button.cta:visited{
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  padding: 15px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.cta>span{
+  text-transform: none;
+  font-weight:normal;
+}
+
+.cta.blue{
+  background-color: #214478 !important;
+}
+
+.cta.green{
+  background-color: #217844 !important;
+}
+
+.cta.red{
+  background-color: #c83737 !important;
+}
+
+.warning{
+  font-style: italic;
+  color: #c83737;
+  font-size: 17px;
+  text-align: center;
+  line-height: 150%;
+  padding: 0 0 20px 0 ;
+}
+
+/* Form Styling for Account Creation page and others */
+.formWrapper{
+  margin: 0px auto;
+  margin-bottom: 20px;
+  max-width: 500px;
+  padding: 15px;
+}
+
+.formError{
+  display: none;
+  background-color: #c83737;
+  font-style: italic;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0 0 15px 0;
+  text-align: center;
+  border-color: #d87070;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.formSuccess{
+  display: none;
+  background-color: #217844;
+  font-style: italic;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0 0 15px 0;
+  text-align: center;
+  border-color: #35c06d;
+  border-width: 2px;
+  border-style: solid;
+}
+
+hr {
+  margin: 30px 0;
+}
+
+input,select,option {
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 7px 25px 7px 1%;
+  width: 100%;
+}
+
+.checkboxGroup input{
+  display: inline-block;
+  width: initial;
+  margin: 20px;
+}
+
+input.disabled{
+  background-color: #efefef;
+}
+
+.inputWrapper{
+  position: relative;
+  padding: 0 0 20px 0;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #848484;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: auto;
+  font-size: 0.8rem;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color:#2f689b;
+  border-bottom: 1px solid #d4d4d4;
+  line-height: 1.3rem;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.inputLabel{
+  padding: 0 0 5px 0;
+  filter: brightness(86%);
+  font-size: 0.8rem;
+  font-stretch: extra-condensed;
+}
+
+.backButton{
+  text-transform: uppercase;
+  font-weight: bold !important;
+  display: inline-block !important;
+  width: 100px;
+  padding: 7px !important;
+  color: #fff !important;
+  background-color: #1a1a1a;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table{
+  width: 100%;
+}
+
+tr{
+  width: 100%;
+}
+
+th{
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  border-color: #000;
+  border-style: dotted;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  background-color: #efefef;
+}
+
+td{
+  padding: 5px;
+}
+
+td a, td a:hover, td a:active{
+  color: #2e5fa8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Page specific styles for dashboard */
+
+#noChecksMessage td{
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+  padding: 20px;
+}
+
+#noChecksMessage{
+  display: none;
+}
+
+#createCheckCTA{
+  margin-top: 40px;
+  display: none;
+}
+
+
+input#address ~ [class~=fa]{
+  display: inline;
+  position: absolute;
+  right: 10px;
+  bottom: 26px;
+  color: black;
+  font-size: 1.1rem;
+}
+
+input#address ~.fa-spinner.fa-spin ~ [class~=fa],
+input#address ~.fa-spinner:not(.fa-spin){
+  display:none; 
+}
+
+body.index .blurb ul>*{
+  color:white;
+  text-align:center;
+  font-weight: 500;
+  background-color: #c3bbbb;
+  border-radius:55% 30px 55% 30px;
+  list-style-type: none;
+}
+body.index .blurb ul>:not(li){
+  font-size: 1.5em;
+  box-shadow: 1px 1px 12px 9px #c3bbbbc9;
+  padding: 15px;
+  background-color: #c3bbbbc9;
+  border-radius: 30px 55%;
+  list-style-type: none;
+}
+body.index .blurb ul>li{
+  font-size:0.9rem;
+}
+
+
+body.index .blurb [class^="pizzaFlowStep"]{
+  width: -webkit-fill-available;
+  box-shadow: 1px 1px 12px 9px #c3bbbb;
+  height: 58px;
+  position: relative;
+}
+body.index .blurb [class^="pizzaFlowStep"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li.pizzaFlowStep2 {}
+
+body.index .blurb [class^="pizzaFlowStep"]>span{
+  font-size: 1.1em;
+  padding: 0 6px;
+}
+
+
+body.index .blurb>p{
+  display: table;
+  padding: 6px 15px;
+  width: -webkit-fill-available;
+  box-shadow: 1px 1px 12px 9px #ffffff87;
+  font-size: 2.3rem;
+  border-radius: 30px 55%;
+  padding: 20px;
+  font-stretch: condensed;
+  background: #ffffff87;
+}
+
+
+body.index .pizzaFlowStep1{
+  margin-left: 20px;
+}
+
+body.index .pizzaFlowStep2{
+  margin-left: 40px;  
+}
+
+body.index .pizzaFlowStep3{
+  margin-left: 50px;  
+}
+body.index .pizzaFlowStep4{
+  margin-left: 70px;  
+}
+body.index .pizzaFlowStep5{
+  margin-left: 90px;  
+}
+body.index .pizzaFlowStep6{
+  margin-left: 100px;  
+}
+.pizzaFlowStep1{
+  background-color:#d35400 !important;
+    box-shadow: 1px 1px 12px 9px #d35400 !important;
+  color: white !important;
+}
+
+.pizzaFlowStep2{
+  background-color: #e67e22d6 !important;
+  box-shadow: 1px 1px 12px 9px #e67e22d6 !important;
+  color: white !important;
+}
+
+.pizzaFlowStep3{
+  background-color: #f39c12c2 !important;
+  box-shadow: 1px 1px 12px 9px #f39c12c2 !important;
+  color: white;
+}
+.pizzaFlowStep4{
+  background-color: #f1c40fc9 !important;
+  box-shadow: 1px 1px 12px 9px #f1c40fc9 !important;
+  color: white;
+}
+.pizzaFlowStep5{
+  background-color: #2ecc71c2 !important;
+  box-shadow: 1px 1px 12px 9px #2ecc71c2!important;
+  color: white;
+}
+.pizzaFlowStep6{
+  background-color: #27ae60b8 !important;
+  box-shadow: 1px 1px 12px 9px #27ae60b8!important;
+  color: white;
+}
+
+
+.flowWrapper{
+  min-height: 100px;
+  max-height: 100%;
+  display: flex;
+  flex-wrap:nowrap;
+  border-spacing: 1px 1px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+.itemsWrapper{
+  min-height: 100px;
+  margin: 0px auto 30px;
+  padding: 10px;
+  display:flex;
+  flex-flow: wrap;
+  border-spacing: 1px 1px;
+  justify-content: start;
+}
+
+.flowItem{
+  margin: 18px;
+}
+
+
+
+.pizzaItem{
+  transition: all .02s ease-in-out;
+  display: inline-block;
+   /* default 1 */
+  padding: 17px;
+  margin: 4px;
+  border-radius: 33% 0;
+  color: black;
+  background-color: floralwhite;
+  box-shadow: 1px 3px 5px 0px floralwhite;
+}
+
+.pizzaItem:hover{
+  transform: scale(1.01);
+  box-shadow: 1px 3px 9px 7px #d4d4d4;
+  z-index:8;
+}
+
+.pizzaItem>header{
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #797972;
+}
+.pizzaItem>header>img{
+  width: 100%;
+  /* max-width: 166px; */
+  object-fit: cover;
+}
+
+
+
+#menu .pizzaItem p{
+  max-width: 100%;
+  font-stretch: condensed;
+  font-size: 0.8em;
+}
+
+#menu .pizzaItem{
+  width: 165px;
+  font-size: 1rem;
+  flex: 0 0 168px;
+  max-height: 260px;
+  overflow: hidden;
+}
+
+#menu .pizzaItem h2{
+  font-size: 0.9em;
+  padding-bottom: 8px;
+}
+
+.rotate3 {
+  transform: rotate(3deg);
+  /* Safari */
+  -webkit-transform: rotate(3deg);
+  /* Firefox */
+  -moz-transform: rotate(3deg);
+  /* IE */
+  -ms-transform: rotate(3deg);
+  /* Opera */
+  -o-transform: rotate(3deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+
+#shoppingCard .pizzaItem{
+  padding: 9px;
+  margin: 2px;
+  font-size: 1rem;
+}
+#shoppingCard .pizzaItem>header>img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+#shoppingCard .pizzaItem>header>h2{
+  font-size: 0.7em;
+  padding-bottom: 6px;
+}
+
+#shoppingCard .pizzaItem p{
+  font-stretch: condensed;
+  font-size: 0.8em;
+}
+
+.inner{
+  width: 100%;
+  height:100%;
+}
+
+#shoppingCard .itemsWrapper{
+}
+
+#menu .itemsWrapper{
+  min-height: 50vh;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+    #shoppingCard{
+      width: calc(100% );
+    }
+    #shoppingCard .itemsWrapper{
+      flex-wrap: wrap;
+      overflow: auto;
+    }
+    .flowWrapper{
+      flex-wrap: wrap;
+    }
+    #fixAddress{
+    width: 100%;
+    }
+    #fixAddress .formWrapper{
+     
+max-width: unset;
+      
+width: auto;
+    }
+}
+@media screen and (min-width: 801px) {
+    #fixAddress{
+      width:30%;
+    }
+    #shoppingCard{
+      width: 30%;
+    }
+    #menu{
+      width: 61%;
+    }
+    #shoppingCard .itemsWrapper{
+    flex-wrap: nowrap;
+    overflow: auto;
+    }
+    #shoppingCard>.inner{
+    }
+    .flowWrapper{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-2-12 12:33:21
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-2-12 12:38:42
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.closePizzaItem{
+  font-family: monospace;
+  font-size: 1em;
+  box-shadow: inset 0px 0 6px 0px #d4d4d4;
+  padding: 0px 2px;
+  border-radius: 5px;
+  float: right;
+  color: red;
+  cursor: pointer;
+  margin-left: 50%;
+}
+
+
+.addPizzaItem{
+  float: right;
+  padding: 6px 13px;
+  background-color: #214478 !important;
+  color: white;
+  border-radius: 40% 3px 40% 3px;
+  cursor: pointer;
+}
+.pizzaItem:hover .addPizzaItem{
+  color: yellow;
+}
+.pizzaItem:hover .addPizzaItem:active{
+  color: greenyellow;
+}
+
+
+.formWrapper {
+    z-index: 2;
+    box-shadow: -1px -1px 14px 10px #cac9c9c7;
+    background: #cac9c9c7;
+}
+
+#menu>.inner>h2,
+#shoppingCard>.inner>h2,
+#fixAddress>.inner>h2,
+.content>section>h2{
+  box-shadow: 3px 9px 8px 4px #5d5b5b;
+  background: #848484;
+  /* display: inline-block; */
+  margin: 19px auto;
+  position: relative;
+  padding: 20px;
+  color: whitesmoke;
+  border-radius: 20px 30% 20px 30%;
+  /* max-width: 500px; */
+}
+
+.hidden{
+  display:none;
+}
+
+body.index h2,
+body.accountEdit h2,
+body.sessionCreate h2,
+body.accountCreate h2 {
+  max-width: 489px;
+  margin-top: 2.8rem;
+  }
+
+body.sessionCreate .content,
+body.accountCreate .content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  
+
+body.index .ctaWrapper,
+h1{
+  display:none;
+}  
+
+body.index .speedLink{
+  font-size: 1.4em;
+  font-weight: 600;
+  color:white;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+body.index .speedLink:hover{
+  font-size:1.4rem;
+}

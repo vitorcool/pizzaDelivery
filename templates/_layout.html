@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <!-- General Settings -->
+    <meta charset="uft-8">
+    <meta http-equiv="content-language" content="en-us">
+    <base href="{global.baseUrl}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Tags-->
+    <title>{head.title} | {global.appName}</title>
+    <meta name="description" content="{head.description}">
+
+    <!-- Static assets -->
+    <link type="image/x-icon" rel="icon" href="favicon.ico">
+
+    <script charset="uft-8" src="public/app.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="styleSheet" type="text/css" href="public/app.css">
+</head>
+
+<body class="{body.class}">
+    <!-- Page Wrapper -->
+    <main>
+        
+
+        <!-- Header -->
+        <header>
+            <!-- logo -->
+            <a class="logo" href="/">
+                <img src="public/logo.svg" alt="Logo" title="{global.appName} of {global.companyName}"/>
+            </a>
+            <!-- navigation -->
+            <ul class="menu">
+                <li >
+                    <a href="/">Home</a>
+                </li>
+                <li class="loggedOut">
+                    <a href="/account/create">Signup</a>
+                </li>
+                <li class="loggedOut">
+                    <a href="/session/create">Login</a>
+                </li>
+                <li class="loggedIn">
+                    <a href="/menu">Menu</a>
+                </li>
+                <li class="loggedIn">
+                    <a href="/account/edit">Account settings</a>
+                </li>
+                <li class="loggedIn">
+                    <a id="logoutButton" href="#">Logout</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </header>
+        <!-- Page-Specific Content -->
+        <div class="content">
+            {@content}
+        </div>
+            
+        <!-- footer -->
+        <footer>
+            <div class="Copyright">Copyright {global.yearCreated} {global.companyName} | All rights reserved</div>
+        </footer>
+            
+    </main>
+</body>
+</html>

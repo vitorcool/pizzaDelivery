@@ -1,0 +1,53 @@
+<h1>{head.title}</h1>
+<section class="flex-center">        
+    <div class="flowWrapper">
+ 
+        <div id="fixAddress" class="flowItem">    
+            <div class="inner">
+                <h2>Delivery address</h2>
+                <div class="formWrapper pizzaFlowStep2">                    
+                    <div class="inputWrapper">
+                        <div class="inputLabel">Please, specify the <span class="addr">address</span> where to deliver your Pizza</div>
+                        <!-- Event input keydown autocomplete autocomplete:select -->
+                        <input type="text" class="addressInput" id="address" name="address"
+                            placeholder="street, apartment number, town/city, state an zip code" />
+                        <i class="fa fa-spinner"></i>
+                        <!-- Event click -->
+                        <i id="geolocationButton" class="fa fa-map-marker"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>      
+        <div id="shoppingCard"  class="flowItem"> 
+            <div class="inner">                
+                <h2>Shopping Card</h2>
+                <div>
+                    <div class="itemsWrapper pizzaFlowStep3">
+                        <! -- render shopping card -->
+                    </div>
+                    <div class="ctaWrapper pizzaFlowStep4">  
+                        <!-- Event click -->
+                        <button type="button" id="pay-button" class="cta blue">Pay</button>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+ 
+
+        <div id="menu" class="flowItem">
+            <div class="inner">
+                <h2>{head.description}</h2>
+                <div class="itemsWrapper pizzaFlowStep3">
+                    <!-- render pizza menu -->          
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    
+    
+</section>

@@ -7,7 +7,7 @@
 // Container for frontend application
 var app = {};
 
-app.PIZZA_PATH= 'menu';
+app.PIZZA_PATH= '/menu';
 
 
 // Config
@@ -182,7 +182,7 @@ app.bindPayButtton=function() {
 
         // <pizza delivery> payment Intent     
         app.client.request2({
-            path: 'api/shoppingcard/pay',
+            path: '/api/shoppingcard/pay',
             method: 'POST',
             payload: {
                 address: deliveryAddress
@@ -230,7 +230,7 @@ app.logUserOut = function (redirectUser) {
         var queryStringObject = {
             'id': tokenId
         };
-        app.client.request(undefined, 'api/tokens', 'DELETE', queryStringObject, undefined, function (statusCode, responsePayload) {
+        app.client.request(undefined, '/api/tokens', 'DELETE', queryStringObject, undefined, function (statusCode, responsePayload) {
             // Set token to false
             app.setSession("token",false);
 
@@ -355,7 +355,7 @@ app.formResponseProcessor = function (formId, requestPayload, responsePayload) {
             'password': requestPayload.password
         };
 
-        app.client.request(undefined, 'api/tokens', 'POST', undefined, newPayload, function (newStatusCode, newResponsePayload) {
+        app.client.request(undefined, '/api/tokens', 'POST', undefined, newPayload, function (newStatusCode, newResponsePayload) {
             // Display an error on the form if needed
             if (newStatusCode !== 200) {
 
@@ -469,12 +469,12 @@ app.renewToken = function (callback) {
             'id': currentToken.id,
             'extend': true,
         };
-        app.client.request(undefined, 'api/tokens', 'PUT', undefined, payload, function (statusCode, responsePayload) {
+        app.client.request(undefined, '/api/tokens', 'PUT', undefined, payload, function (statusCode, responsePayload) {
             // Display an error on the form if needed
             if (statusCode == 200) {
                 // Get the new token details
                 var queryStringObject = { 'id': currentToken.id };
-                app.client.request(undefined, 'api/tokens', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {
+                app.client.request(undefined, '/api/tokens', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {
                     // Display an error on the form if needed
                     if (statusCode == 200) {
                         app.setSession('token',responsePayload);
@@ -520,7 +520,7 @@ app.restoreAddress=function(callback){
         var queryStringObject = {
             'email': email
         };
-        app.client.request(undefined, 'api/users', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {            
+        app.client.request(undefined, '/api/users', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {            
             if (statusCode == 200) {
                 // set UI address value with user.address
                 document.querySelector("#address").value = responsePayload.address;
@@ -650,7 +650,7 @@ app.searchAddress = function (searchObj, callback) {
     searchTimer = setTimeout(function () {
         searchTimer = null;
 
-        app.client.request(undefined, 'api/addresses', 'GET', searchObj, undefined, function (statusCode, responsePayload) {
+        app.client.request(undefined, '/api/addresses', 'GET', searchObj, undefined, function (statusCode, responsePayload) {
             // Callback if requested
             if (callback) {
                 try {                    
@@ -708,7 +708,7 @@ app.loadPizzaMenu=function(){
                                             <p>{description}</p>
                                         </article>`;
 
-    app.client.request(undefined, 'api/pizzas', 'GET', { location: undefined }, undefined, function (statusCode, responsePayload) {
+    app.client.request(undefined, '/api/pizzas', 'GET', { location: undefined }, undefined, function (statusCode, responsePayload) {
         if( statusCode == 403){
             // log the user out
             app.logUserOut();
@@ -739,7 +739,7 @@ app.addPizza2ShoppingCard = function(name){
             'name': name,            
         };
 
-        app.client.request(undefined, 'api/shoppingcard', 'POST', undefined, newPayload, function (newStatusCode, newResponsePayload) {
+        app.client.request(undefined, '/api/shoppingcard', 'POST', undefined, newPayload, function (newStatusCode, newResponsePayload) {
             // Display an error on the form if needed
             if (newStatusCode == 200) {
                 app.loadShoppingCard();                
@@ -757,7 +757,7 @@ app.removePizza2ShoppingCard = function(element){
 
     if(element){
         const _idx = element.dataset._idx;
-        app.client.request(undefined, 'api/shoppingcard', 'DELETE', {idx:_idx}, undefined, function (newStatusCode, newResponsePayload) {
+        app.client.request(undefined, '/api/shoppingcard', 'DELETE', {idx:_idx}, undefined, function (newStatusCode, newResponsePayload) {
             // Display an error on the form if needed
             if (newStatusCode == 200) {
                 app.loadShoppingCard();
@@ -801,7 +801,7 @@ app.loadShoppingCard = function () {
 
     // GET user shoppingCard[] data 
                                     
-    app.client.request(undefined, 'api/users', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {        
+    app.client.request(undefined, '/api/users', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {        
         const ok = statusCode == 200;
         // sum total from shoppingCard items
         const payValue = (responsePayload.shoppingCard || []).reduce(function(a, b) {
@@ -835,7 +835,7 @@ app.loadAccountEditPage = function () {
         var queryStringObject = {
             'email': email
         };
-        app.client.request(undefined, 'api/users', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {
+        app.client.request(undefined, '/api/users', 'GET', queryStringObject, undefined, function (statusCode, responsePayload) {
             if (statusCode == 200) {
                 // Put the data into the forms as values where needed
                 document.querySelector("#accountEdit1 .nameInput").value = responsePayload.name;
